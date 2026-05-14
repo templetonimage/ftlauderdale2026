@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Itinerary · Ft. Lauderdale Retreat · Peculiar Collective</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/png" href="../Palm_tree_emoji.png" />
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600;700&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --purple:  rgba(72,0,163,1);
+      --teal:    rgba(2,146,183,1);
+      --teal2:   rgba(0,160,163,1);
+      --lime:    rgba(192,255,0,1);
+      --dark:    rgba(29,29,31,1);
+      --dark2:   rgba(26,26,26,1);
+    }
+
+    body {
+      font-family: 'Poppins', 'Montserrat', sans-serif;
+      font-weight: 300;
+      background: var(--dark);
+      color: #fff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Noise overlay — exact from main site */
+    body::before {
+      content: "";
+      opacity: .025;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      position: fixed;
+      inset: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 40px;
+      background: linear-gradient(to bottom, rgba(10,5,25,0.85), transparent);
+      backdrop-filter: blur(4px);
+    }
+    .nav-brand {
+      font-family: 'Bebas Neue', 'Anton', sans-serif;
+      font-size: 18px; letter-spacing: 0.2em; color: #fff;
+    }
+    .nav-back {
+      font-family: 'Poppins', sans-serif;
+      background: rgba(26,26,26,0.71); color: #fff;
+      padding: 10px 22px; letter-spacing: 0.16em; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.4); cursor: pointer;
+      font-size: 10px; font-weight: 400; border-radius: 40px;
+      transition: all 0.3s; text-decoration: none; display: inline-block;
+    }
+    .nav-back:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* Line accents — exact from main site */
+    .pc-line-teal {
+      display: block; height: 8px; border: none;
+      background-color: var(--teal2); width: 200px; margin: 0 0 20px 0;
+    }
+    .pc-line-purple {
+      display: block; height: 8px; border: none;
+      background-color: var(--purple); width: 200px; margin: 0 0 20px 0;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 55vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, var(--purple) 0%, var(--teal) 100%);
+      opacity: .85;
+    }
+    .hero-overlay-bottom {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 40%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      padding: 120px 40px 64px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(192,255,0,0.1); border: 1px solid rgba(192,255,0,0.35);
+      color: var(--lime); font-family: 'Poppins', sans-serif;
+      font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+      font-weight: 700; padding: 7px 16px; margin-bottom: 20px; border-radius: 2px;
+    }
+    .badge::before { content: '●'; font-size: 6px; }
+    .hero-eyebrow {
+      font-family: 'Poppins', sans-serif; font-size: 11px;
+      letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--teal); font-weight: 600; margin-bottom: 12px;
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', 'Anton', 'Impact', sans-serif;
+      font-size: clamp(4.5rem, 11vw, 10rem);
+      line-height: 0.9; color: #fff; margin-bottom: 24px;
+    }
+    .hero-title .accent { color: var(--teal); }
+    .hero-sub {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px; color: rgba(255,255,255,0.8);
+      max-width: 520px; line-height: 1.75; font-weight: 300; letter-spacing: 0.05em;
+    }
+
+    /* TICKER */
+    .ticker { background: var(--purple); overflow: hidden; padding: 13px 0; }
+    .ticker-inner {
+      display: flex; gap: 60px;
+      animation: ticker 30s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-inner span {
+      font-family: 'Poppins', sans-serif; font-size: 11px;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: #fff; font-weight: 700; flex-shrink: 0;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* LAYOUT */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    section { padding: 100px 0; }
+
+    /* SECTION HEADING */
+    .section-heading { margin-bottom: 56px; }
+    .section-heading h2 {
+      font-family: 'Bebas Neue', 'Anton', sans-serif;
+      font-size: clamp(3rem, 5vw, 5rem); line-height: 1;
+      color: #fff; margin-bottom: 14px;
+    }
+    .section-heading p {
+      font-family: 'Source Sans 3', sans-serif;
+      color: rgba(255,255,255,0.5); font-size: 14px;
+      letter-spacing: 0.05em; font-weight: 300;
+    }
+
+    /* WHITE SECTION OVERRIDES */
+    .section-white { background: #fff; }
+    .section-white .section-heading h2 { color: #111; }
+    .section-white .section-heading p { color: #888; }
+    .section-white .day-header { border-bottom-color: #e8e8e8; background: #fff; }
+    .section-white .day-header.first { border-top-color: #e8e8e8; }
+    .section-white .day-header:hover { background: #f7f7f7; }
+    .section-white .day-num { border-right-color: #e8e8e8; background: #f4f4f4; }
+    .section-white .day-block.open .day-num { background: var(--purple); }
+    .section-white .day-num-label { color: #aaa; }
+    .section-white .day-num-val { color: #111; }
+    .section-white .day-block.open .day-num .day-num-label,
+    .section-white .day-block.open .day-num .day-num-val { color: #fff; }
+    .section-white .day-meta { border-right-color: #e8e8e8; }
+    .section-white .day-name { color: #111; }
+    .section-white .day-focus { color: #aaa; }
+    .section-white .day-toggle { color: var(--purple); }
+    .section-white .event-list { border-left-color: #e0e0e0; }
+    .section-white .event { border-bottom-color: #eee; }
+    .section-white .event::before { background: transparent; }
+    .section-white .event:hover::before { background: var(--teal); }
+    .section-white .event.featured::before { background: var(--purple); }
+    .section-white .event-time { border-right-color: #eee; color: var(--purple); background: #fafafa; }
+    .section-white .event.featured .event-time { color: var(--teal); }
+    .section-white .event-title { color: #111; }
+    .section-white .event-desc { color: #444; }
+    .section-white .alt-label { color: #bbb; }
+    .section-white .event.alt { opacity: 0.6; }
+    .section-white .tag-featured { background: rgba(72,0,163,0.08); color: var(--purple); border-color: rgba(72,0,163,0.2); }
+    .section-white .tag-optional { background: #f0f0f0; color: #999; border-color: #ddd; }
+    .section-white .tag-latenight { background: rgba(72,0,163,0.07); color: var(--purple); border-color: rgba(72,0,163,0.15); }
+    .section-white .tag-alt { background: #f5f5f5; color: #bbb; border-color: #e5e5e5; }
+    .section-white .notes-box { background: #f4f4f4; border-color: #e0e0e0; }
+    .section-white .notes-box h3 { color: #111; }
+    .section-white .notes-list li { color: #444; }
+    .section-white .notes-list li::before { color: var(--teal); }
+
+    /* DAY BLOCKS */
+    .day-header {
+      display: grid; grid-template-columns: 80px 220px 1fr;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer; user-select: none;
+      transition: background 0.2s;
+    }
+    .day-block:first-of-type .day-header,
+    .day-header.first { border-top: 1px solid rgba(255,255,255,0.08); }
+    .day-header:hover { background: rgba(255,255,255,0.03); }
+
+    .day-num {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 28px 0; border-right: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.25s;
+    }
+    .day-num-label {
+      font-family: 'Poppins', sans-serif; font-size: 8px;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); font-weight: 700;
+    }
+    .day-num-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem; color: #fff; line-height: 1;
+    }
+    .day-meta {
+      padding: 24px 28px; border-right: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .day-date {
+      font-family: 'Poppins', sans-serif; font-size: 10px;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--teal); font-weight: 600; margin-bottom: 5px;
+    }
+    .day-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; line-height: 1; color: #fff;
+    }
+    .day-focus {
+      font-family: 'Poppins', sans-serif; font-size: 11px;
+      color: rgba(255,255,255,0.35); margin-top: 5px;
+    }
+    .day-toggle {
+      display: flex; align-items: center; justify-content: flex-end;
+      padding: 0 32px; font-family: 'Poppins', sans-serif;
+      font-size: 11px; letter-spacing: 0.2em; color: var(--teal);
+      text-transform: uppercase; font-weight: 600; gap: 8px;
+    }
+    .chevron { font-size: 22px; line-height: 1; transition: transform 0.3s; }
+
+    .day-block.open .day-header .chevron { transform: rotate(90deg); }
+    .day-block.open .day-num { background: var(--purple); }
+
+    /* EVENTS */
+    .day-events { display: none; }
+    .day-block.open .day-events { display: block; }
+
+    .event-list {
+      border-left: 3px solid rgba(255,255,255,0.06);
+      margin-left: 80px;
+    }
+    .event {
+      display: grid; grid-template-columns: 170px 1fr;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+    }
+    .event::before {
+      content: '';
+      position: absolute; left: -3px; top: 0; bottom: 0;
+      width: 3px; background: transparent;
+      transition: background 0.2s;
+    }
+    .event:hover::before { background: var(--teal); }
+    .event.featured::before { background: var(--purple); }
+    .event.alt { opacity: 0.5; }
+    .event.alt:hover { opacity: 0.8; }
+
+    .event-time {
+      padding: 20px 24px 20px 24px;
+      border-right: 1px solid rgba(255,255,255,0.05);
+      font-family: 'Poppins', sans-serif; font-size: 11px;
+      color: var(--teal); font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; line-height: 1.45;
+      display: flex; align-items: flex-start; padding-top: 22px;
+    }
+    .event-body { padding: 20px 28px; }
+    .event-title {
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem;
+      letter-spacing: 0.04em; color: #fff; margin-bottom: 6px; line-height: 1;
+    }
+    .event-desc {
+      font-family: 'Source Sans 3', sans-serif; font-size: 13px;
+      color: rgba(255,255,255,0.6); line-height: 1.7;
+      letter-spacing: 0.03em; font-weight: 300;
+    }
+    .event-tags { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .tag {
+      font-family: 'Poppins', sans-serif; font-size: 9px;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      font-weight: 700; padding: 3px 10px; border-radius: 2px;
+    }
+    .tag-featured { background: rgba(72,0,163,0.2); color: var(--teal); border: 1px solid rgba(2,146,183,0.3); }
+    .tag-optional { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1); }
+    .tag-latenight { background: rgba(192,255,0,0.07); color: var(--lime); border: 1px solid rgba(192,255,0,0.2); }
+    .tag-alt { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.07); }
+    .alt-label {
+      font-family: 'Poppins', sans-serif; font-size: 9px;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); font-weight: 700; margin-bottom: 4px;
+    }
+
+    /* NOTES */
+    .notes-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 36px 40px; margin-top: 56px;
+    }
+    .notes-box h3 {
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem;
+      letter-spacing: 0.05em; color: #fff; margin-bottom: 20px;
+    }
+    .notes-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .notes-list li {
+      font-family: 'Source Sans 3', sans-serif; font-size: 13px;
+      color: rgba(255,255,255,0.6); line-height: 1.65;
+      padding-left: 22px; position: relative; font-weight: 300;
+    }
+    .notes-list li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 12px; }
+
+    /* FOOTER LINKS */
+    .footer-link {
+      font-family: 'Poppins', sans-serif;
+      color: rgba(255,255,255,1); font-size: 12px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      line-height: 1.8; transition: color 0.2s; text-decoration: none; display: block;
+    }
+    .footer-link:hover { color: rgba(192,255,0,1); }
+    .footer-link-lime {
+      font-family: 'Poppins', sans-serif;
+      color: rgba(187,251,9,1); font-size: 12px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      line-height: 1.8; text-decoration: none; display: block;
+    }
+
+    /* FOOTER */
+    footer { background: rgba(26,26,26,1); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .hero-content { padding: 100px 20px 52px; }
+      section { padding: 70px 0; }
+      .container { padding: 0 20px; }
+      .day-header { grid-template-columns: 60px 1fr auto; }
+      .day-meta { display: none; }
+      .day-toggle { padding: 0 16px; }
+      .event-list { margin-left: 0; }
+      .event { grid-template-columns: 80px 1fr; }
+      .event-time { font-size: 9px; padding: 16px 10px; }
+      .event-body { padding: 16px 14px; }
+      .notes-box { padding: 24px 20px; }
+      footer { padding: 32px 20px 20px; }
+      .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+      .pc-line-teal, .pc-line-purple { width: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-brand">PECULIAR COLLECTIVE</span>
+    <a href="https://retreat.peculiarcollective.us" class="nav-back">← Back to Retreat</a>
+  </nav>
+
+  <section class="hero">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?auto=format&fit=crop&w=1600&q=80" alt="" />
+    <div class="hero-overlay"></div>
+    <div class="hero-overlay-bottom"></div>
+    <div class="hero-content">
+      <div class="badge">Attendee Document · Not for Public Distribution</div>
+      <p class="hero-eyebrow">June 15–18, 2026 · Fort Lauderdale, FL</p>
+      <h1 class="hero-title">FULL<br><span class="accent">ITINERARY</span><br>&amp; PROGRAM</h1>
+      <p class="hero-sub">Your complete day-by-day breakdown. Times, activities, and alternates — all in one place.</p>
+    </div>
+  </section>
+
+  <section class="section-white" style="padding: 100px 0;">
+    <div class="container">
+
+      <div class="section-heading">
+        <hr class="pc-line-teal" />
+        <h2 style="color:#111;">DAY-BY-DAY<br>BREAKDOWN</h2>
+        <p style="color:#888;">Click any day to expand the full schedule.</p>
+      </div>
+
+      <!-- DAY 1 -->
+      <div class="day-block open" id="d1">
+        <div class="day-header first" onclick="toggle('d1')">
+          <div class="day-num"><span class="day-num-label">Day</span><span class="day-num-val">01</span></div>
+          <div class="day-meta">
+            <div class="day-date">Monday, June 15</div>
+            <div class="day-name">Welcome &amp; Wellness</div>
+            <div class="day-focus">Grounding · Networking · Low-Impact Movement</div>
+          </div>
+          <div class="day-toggle"><span>Details</span><span class="chevron">›</span></div>
+        </div>
+        <div class="day-events"><div class="event-list">
+
+          <div class="event">
+            <div class="event-time">Morning &mdash; Afternoon</div>
+            <div class="event-body">
+              <div class="event-title">Arrivals — Go Your Own Way</div>
+              <div class="event-desc">Independent arrival and travel. Explore Fort Lauderdale on your own until villa check-in opens at 4 PM.</div>
+              <div class="event-tags"><span class="tag tag-optional">Flexible</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">4:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Villa Check-In</div>
+              <div class="event-desc">Get settled into accommodations, unload groceries, and get familiar with the space.</div>
+              <div class="event-tags"><span class="tag tag-featured">All Guests</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">5:00 &ndash; 6:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Meet &amp; Greet Session</div>
+              <div class="event-desc">No laptops or phones. Open conversation about what we want to work on in our businesses and how we want to grow. One of the most important hours of the week.</div>
+              <div class="event-tags"><span class="tag tag-featured">Featured</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">7:00 &ndash; 9:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">TopGolf Pompano Beach</div>
+              <div class="event-desc">High energy, low pressure. Perfect for breaking the ice. Est. $35+ per person, including 2–3 hrs play and 1 drink/appetizer. Pay on-site.</div>
+              <div class="event-tags"><span class="tag tag-featured">Night Out</span></div>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-time">Late Night</div>
+            <div class="event-body">
+              <div class="event-title">Karaoke, Games, or Coworking</div>
+              <div class="event-desc">Wind down however feels right — open floor at the villa.</div>
+              <div class="event-tags"><span class="tag tag-latenight">Late Night</span></div>
+            </div>
+          </div>
+
+        </div></div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-block" id="d2">
+        <div class="day-header" onclick="toggle('d2')">
+          <div class="day-num"><span class="day-num-label">Day</span><span class="day-num-val">02</span></div>
+          <div class="day-meta">
+            <div class="day-date">Tuesday, June 16</div>
+            <div class="day-name">Branding &amp; Content Day</div>
+            <div class="day-focus">Professional Asset Creation · Peer Exchange</div>
+          </div>
+          <div class="day-toggle"><span>Details</span><span class="chevron">›</span></div>
+        </div>
+        <div class="day-events"><div class="event-list">
+
+          <div class="event">
+            <div class="event-time">7:00 &ndash; 10:00 AM</div>
+            <div class="event-body">
+              <div class="event-title">Sunrise or Breakfast at Villa</div>
+              <div class="event-desc">Start the morning at your own pace. Early risers head to the beach; others fuel up at the villa.</div>
+              <div class="event-tags"><span class="tag tag-optional">Flexible</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">11:00 AM &ndash; 1:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">The Villa Circuit</div>
+              <div class="event-desc">Three rotating stations using the villa's luxury interiors: Lifestyle, Headshots, and Talking Heads &amp; B-Roll. Rotate through all three. These are the assets you'll use all year. Villa circuit access included in Branding Day Pass ($125, pre-payment required).</div>
+              <div class="event-tags"><span class="tag tag-featured">Main Event</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">2:00 &ndash; 4:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Las Olas &amp; Beach Walk</div>
+              <div class="event-desc">Venture out to capture the "yacht life" aesthetic and iconic palm-lined streets. More branding content, more storytelling material.</div>
+              <div class="event-tags"><span class="tag tag-featured">Street Shoot</span></div>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-time">5:00 &ndash; 6:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Break &amp; Get Ready for Dinner</div>
+              <div class="event-desc">Freshen up and prepare for the evening.</div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">7:00 &ndash; 9:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Entrepreneurial Dinner — Daniel's Steak &amp; Chop</div>
+              <div class="event-desc">A high-end "Power Dinner" to spark real conversation around brand growth, partnerships, and business vision. Set menu est. ~$135 per person including non-alc bev, tip &amp; tax. Pay on-site.</div>
+              <div class="event-tags"><span class="tag tag-featured">Power Dinner</span></div>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-time">Late Night</div>
+            <div class="event-body">
+              <div class="event-title">Coworking Hour &amp; Content Exchange</div>
+              <div class="event-desc">Edit, swap files, workshop each other's content, or just wind down together.</div>
+              <div class="event-tags"><span class="tag tag-latenight">Late Night</span></div>
+            </div>
+          </div>
+
+        </div></div>
+      </div>
+
+
+
+      <!-- DAY 3 -->
+      <div class="day-block" id="d3">
+        <div class="day-header first" onclick="toggle('d3')">
+          <div class="day-num"><span class="day-num-label">Day</span><span class="day-num-val">03</span></div>
+          <div class="day-meta">
+            <div class="day-date">Wednesday, June 17</div>
+            <div class="day-name">Photo &amp; Video Walks</div>
+            <div class="day-focus">Technical Skill · Portfolio Diversity</div>
+          </div>
+          <div class="day-toggle"><span>Details</span><span class="chevron">›</span></div>
+        </div>
+        <div class="day-events"><div class="event-list">
+
+          <div class="event">
+            <div class="event-time">7:00 &ndash; 10:00 AM</div>
+            <div class="event-body">
+              <div class="event-title">Sunrise or Breakfast at Villa</div>
+              <div class="event-desc">Golden hour for those who want it. Or a slow breakfast — your call.</div>
+              <div class="event-tags"><span class="tag tag-optional">Flexible</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">11:00 AM &ndash; 1:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Lifestyle &amp; Engagement Walk</div>
+              <div class="event-desc">Local models (funded by your incidental fee) for a styled shoot at Birch State Park or the Riverwalk. Build editorial-quality portfolio assets. Est. $95 per person — pre-payment required.</div>
+              <div class="event-tags"><span class="tag tag-featured">Styled Shoot</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">2:00 &ndash; 3:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Adrenaline Break — Jet Skis</div>
+              <div class="event-desc">A high-octane visual moment and a genuine memory you won't forget. Great for BTS video content. Est. $125+ per person, pay on-site.</div>
+              <div class="event-tags"><span class="tag tag-featured">Adrenaline</span></div>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-time">4:00 &ndash; 5:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Indoor Shooting — Part 2</div>
+              <div class="event-desc">Continue creative sessions at the villa using indoor or covered locations. Or take a break before dinner.</div>
+              <div class="event-tags"><span class="tag tag-optional">Studio Session</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">6:00 &ndash; 9:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Dinner — Seafood Restaurant</div>
+              <div class="event-desc">TBD based on group preference. Local waterfront seafood spot to close out the last full evening together.</div>
+              <div class="event-tags"><span class="tag tag-featured">Group Dinner</span></div>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-time">Late Night</div>
+            <div class="event-body">
+              <div class="event-title">Coworking, Editing &amp; Motivational Closer</div>
+              <div class="event-desc">Share content from the week, wrap up loose ends, and close out the collective energy before the final day.</div>
+              <div class="event-tags"><span class="tag tag-latenight">Late Night</span></div>
+            </div>
+          </div>
+
+        </div></div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-block" id="d4">
+        <div class="day-header" onclick="toggle('d4')">
+          <div class="day-num"><span class="day-num-label">Day</span><span class="day-num-val">04</span></div>
+          <div class="day-meta">
+            <div class="day-date">Thursday, June 18</div>
+            <div class="day-name">Beach Day &amp; Departure</div>
+            <div class="day-focus">Decompression · Last Looks</div>
+          </div>
+          <div class="day-toggle"><span>Details</span><span class="chevron">›</span></div>
+        </div>
+        <div class="day-events"><div class="event-list">
+
+          <div class="event featured">
+            <div class="event-time">7:00 &ndash; 10:00 AM</div>
+            <div class="event-body">
+              <div class="event-title">Final Sunrise at the Beach</div>
+              <div class="event-desc">One last golden hour together. Bring your camera or just your eyes.</div>
+              <div class="event-tags"><span class="tag tag-featured">Don't Miss It</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">10:00 AM</div>
+            <div class="event-body">
+              <div class="event-title">Official Villa Check-Out</div>
+              <div class="event-desc">Pack up, clear rooms, and say your goodbyes to the villa.</div>
+              <div class="event-tags"><span class="tag tag-featured">All Guests</span></div>
+            </div>
+          </div>
+
+          <div class="event featured">
+            <div class="event-time">10:30 AM</div>
+            <div class="event-body">
+              <div class="event-title">Farewell Brunch</div>
+              <div class="event-desc">Suggested: Louis Bossi's or Casablanca Café. Final meal together before everyone heads their own way.</div>
+              <div class="event-tags"><span class="tag tag-featured">Farewell</span></div>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-time">1:00 &ndash; 4:00 PM</div>
+            <div class="event-body">
+              <div class="event-title">Free Time — Beach, Las Olas, or Sightseeing</div>
+              <div class="event-desc">For those with evening flights: beach hang, shopping on Las Olas, or a final wander. Fly safe.</div>
+              <div class="event-tags"><span class="tag tag-optional">Flexible</span></div>
+            </div>
+          </div>
+
+        </div></div>
+      </div>
+
+      <div class="notes-box">
+        <h3>PROGRAM NOTES</h3>
+        <ul class="notes-list">
+          <li>All times are approximate and subject to adjustment based on group energy and weather.</li>
+          <li>Incidental fees (models, permits) are covered by the per-person contribution collected at registration.</li>
+          <li>Jet Skis and Styled Photo Walk require pre-payment. Square links will be sent separately.</li>
+          <li>Daniel's Dinner, TopGolf, and Jet Skis are pay on-site individually.</li>
+          <li>Flight and ground transportation are not included in any package.</li>
+          <li>Questions? <strong><a href="mailto:info@peculiarcollective.us" style="color: var(--teal); text-decoration: none;">info@peculiarcollective.us</a></strong></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER — matches landing page -->
+  <footer style="background: rgba(26,26,26,1); padding: 48px 40px 32px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+
+      <div class="footer-grid" style="display: grid; grid-template-columns: 220px 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+
+        <!-- Brand + social -->
+        <div>
+          <div style="width:160px; height:87px; margin-bottom:16px; background: url(//static.showit.co/400/L04ki2wKTSSvZkwZVm-fFA/169817/collective-white-high-res.png) no-repeat center/contain; opacity:.9;"></div>
+          <div style="display:flex; gap:12px; margin-top:16px;">
+            <a href="https://www.facebook.com/groups/thepeculiarcollective" target="_blank" rel="noreferrer" style="opacity:.7; transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="#fff"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64h-64z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/the_peculiarcollective" target="_blank" rel="noreferrer" style="opacity:.7; transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="#fff"><circle cx="255.25" cy="256.21" r="70.68"/><path d="M338,54.63H174c-62.72,0-114,51.31-114,114V343.33c0,62.73,51.32,114,114,114H338c62.72,0,114-51.31,114-114V168.67C452,105.94,400.68,54.63,338,54.63ZM255.77,364.07A107.95,107.95,0,1,1,363.71,256.13,107.95,107.95,0,0,1,255.77,364.07Zm109.67-192A25.56,25.56,0,1,1,391,146.5,25.56,25.56,0,0,1,365.44,172.06Z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@thepeculiarcollective" target="_blank" rel="noreferrer" style="opacity:.7; transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="#fff"><path d="M508.6 148.8c0-45-33.1-81.2-74-81.2C379.2 65 322.7 64 265 64h-18c-57.6 0-114.2 1-169.6 3.6C36.6 67.6 3.5 104 3.5 149 1 184.6-.1 220.2 0 255.8c-.1 35.6 1 71.2 3.4 106.9 0 45 33.1 81.5 73.9 81.5 58.2 2.7 117.9 3.9 178.6 3.8 60.8.2 120.3-1 178.6-3.8 40.9 0 74-36.5 74-81.5 2.4-35.7 3.5-71.3 3.4-107 .2-35.6-.9-71.2-3.3-106.9zM207 353.9V157.4l145 98.2-145 98.3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Home -->
+        <div>
+          <p style="font-family:'Poppins',sans-serif; color:#fff; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">HOME</p>
+          <div style="width:40px; height:1px; background:#fff; margin-bottom:16px; opacity:.3;"></div>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <a href="https://peculiarcollective.us" target="_blank" rel="noreferrer" class="footer-link">Join Facebook Group</a>
+            <a href="https://peculiarcollective.us/who-we-are" target="_blank" rel="noreferrer" class="footer-link">Our Story</a>
+            <a href="https://www.skool.com/peculiar-collective-8528/about" target="_blank" rel="noreferrer" class="footer-link">Education +</a>
+            <a href="https://peculiarcollective.us" target="_blank" rel="noreferrer" class="footer-link">Main Site</a>
+          </div>
+        </div>
+
+        <!-- Conference -->
+        <div>
+          <p style="font-family:'Poppins',sans-serif; color:#fff; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">CONFERENCE</p>
+          <div style="width:40px; height:1px; background:#fff; margin-bottom:16px; opacity:.3;"></div>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <a href="https://peculiarcollective.us/conference" target="_blank" rel="noreferrer" class="footer-link-lime">Register Now</a>
+            <a href="https://peculiarcollective.us/conference" target="_blank" rel="noreferrer" class="footer-link">Peculiar Conference '26</a>
+            <a href="https://peculiarcollective.us/sponsors" target="_blank" rel="noreferrer" class="footer-link">Sponsor</a>
+            <a href="https://peculiarcollective.us/main-speaker" target="_blank" rel="noreferrer" class="footer-link">Speakers</a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <p style="font-family:'Poppins',sans-serif; color:#fff; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">RESOURCES</p>
+          <div style="width:40px; height:1px; background:#fff; margin-bottom:16px; opacity:.3;"></div>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <a href="https://peculiarcollective.us/faq" target="_blank" rel="noreferrer" class="footer-link">FAQ</a>
+            <a href="https://peculiarcollective.us/travel" target="_blank" rel="noreferrer" class="footer-link">Travel</a>
+            <a href="https://peculiarcollective.us/photowalks" target="_blank" rel="noreferrer" class="footer-link">Photowalks</a>
+            <a href="https://donate.stripe.com/4gwcPPavO1qWe6k9AB" target="_blank" rel="noreferrer" class="footer-link">Donate</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <p style="font-family:'Poppins',sans-serif; color:rgba(255,255,255,0.35); font-size:11px; letter-spacing:0.1em;">© 2026 Peculiar Collective · Fort Lauderdale Retreat · June 15–18, 2026</p>
+        <p style="font-family:'Poppins',sans-serif; color:rgba(255,255,255,0.25); font-size:11px;">info@peculiarcollective.us</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    function toggle(id) {
+      document.getElementById(id).classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
