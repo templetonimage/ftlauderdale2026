@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Peculiar Collective FLL Retreat 2026</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="Palm_tree_emoji.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: rgba(72,0,163,1);
+      --teal: rgba(2,146,183,1);
+      --lime: rgba(187,251,9,1);
+      --dark: rgba(26,26,26,1);
+      --font-display: 'Bebas Neue', 'Anton', 'Impact', sans-serif;
+      --font-body: 'DM Sans', 'Poppins', 'Montserrat', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #0a0519;
+      color: #fff;
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 40px;
+      background: linear-gradient(to bottom, rgba(10,5,25,0.92), rgba(10,5,25,0.7));
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 18px;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+    }
+
+    .btn-pc-outline {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: #fff;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      border-radius: 4px;
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .btn-pc-outline:hover { border-color: #fff; color: #fff; }
+
+    /* ── CONTENT ── */
+    main {
+      flex: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 72px 32px 96px;
+      width: 100%;
+    }
+
+    .page-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .last-updated {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+      margin-bottom: 56px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--teal));
+      margin-bottom: 56px;
+      border-radius: 2px;
+    }
+
+    section.policy-section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: 0.12em;
+      color: #fff;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    p, li {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li { margin-bottom: 6px; }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--lime); }
+
+    .contact-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-top: 8px;
+    }
+    .contact-box p { margin-bottom: 4px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      padding: 48px 40px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      width: 160px;
+      height: 87px;
+      margin-bottom: 16px;
+      background: url(//static.showit.co/400/L04ki2wKTSSvZkwZVm-fFA/169817/collective-white-high-res.png) no-repeat center/contain;
+      opacity: 0.9;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .footer-socials a {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    .footer-socials a:hover { opacity: 1; }
+
+    .footer-col-label {
+      font-family: var(--font-body);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .footer-link {
+      color: rgba(255,255,255,1);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.8;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .footer-link:hover { color: rgba(192,255,0,1); }
+
+    .footer-link-lime {
+      color: rgba(187,251,9,1);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.8;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .footer-link-lime:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      font-family: var(--font-body);
+      margin-bottom: 4px;
+      line-height: 1.6;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      main { padding: 48px 20px 72px; }
+      footer { padding: 40px 20px 28px; }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+      .nav-brand { font-size: 15px; }
+      .btn-pc-outline { font-size: 11px; padding: 7px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-brand" href="index.html">PECULIAR COLLECTIVE</a>
+    <a class="btn-pc-outline" href="index.html#reserve">Secure Your Spot</a>
+  </nav>
+
+  <!-- CONTENT -->
+  <main>
+    <span class="page-label">Legal</span>
+    <h1>PRIVACY POLICY</h1>
+    <p class="last-updated">Last updated: May 2026</p>
+    <div class="divider"></div>
+
+    <section class="policy-section">
+      <h2>OVERVIEW</h2>
+      <p>The Peculiar Collective ("we," "us," or "our") operates the Ft. Lauderdale Retreat 2026 website and related event registration. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.</p>
+      <p>By submitting your interest or registering for any event, you agree to the practices described in this policy.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>INFORMATION WE COLLECT</h2>
+      <p>When you submit the interest form on our site, we may collect:</p>
+      <ul>
+        <li>Full name</li>
+        <li>Email address</li>
+        <li>Instagram handle</li>
+        <li>Event preferences and any additional notes you provide</li>
+      </ul>
+      <p>We do not collect payment information directly through this website. Any payment processing is handled by third-party providers subject to their own privacy policies.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>HOW WE USE YOUR INFORMATION</h2>
+      <p>We use the information you provide to:</p>
+      <ul>
+        <li>Follow up about event availability, pricing, and logistics</li>
+        <li>Send relevant updates about the Ft. Lauderdale Retreat 2026</li>
+        <li>Communicate any changes to the event schedule or offerings</li>
+        <li>Improve our events and community experiences</li>
+      </ul>
+      <p>We do not sell, rent, or trade your personal information to third parties.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>COMMUNICATIONS</h2>
+      <p>By submitting the interest form, you consent to receiving follow-up emails related to the retreat, sent via <a href="https://flodesk.com" target="_blank" rel="noreferrer">Flodesk</a>. You may opt out at any time by clicking the unsubscribe link included in every email, or by contacting us directly at the address below.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>DATA RETENTION</h2>
+      <p>We retain your information for as long as necessary to fulfill the purposes described in this policy or as required for the administration of the event. After the event concludes, we may retain contact information to notify you about future Peculiar Collective events unless you request removal.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>THIRD-PARTY SERVICES</h2>
+      <p>We use the following third-party services to operate this site and communicate with you. Each has its own privacy policy and data practices — we encourage you to review them directly.</p>
+
+      <p><strong style="color:#fff; font-family:'Bebas Neue',sans-serif; letter-spacing:0.08em; font-size:1rem;">Formspree</strong><br/>
+      Our interest form is powered by <a href="https://formspree.io" target="_blank" rel="noreferrer">Formspree</a>. When you submit the form, your name, email, Instagram handle, event interests, and any additional notes are transmitted to and stored by Formspree on our behalf. Formspree may process this data on servers located in the United States. You can review their privacy practices at <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noreferrer">formspree.io/legal/privacy-policy</a>.</p>
+
+      <p><strong style="color:#fff; font-family:'Bebas Neue',sans-serif; letter-spacing:0.08em; font-size:1rem;">Flodesk</strong><br/>
+      We use <a href="https://flodesk.com" target="_blank" rel="noreferrer">Flodesk</a> to manage email communications and follow-ups related to the retreat. When you submit your interest, your contact information may be added to our Flodesk audience to receive event updates. Each email we send includes an unsubscribe link — you can opt out at any time. You can review Flodesk's privacy practices at <a href="https://flodesk.com/privacy" target="_blank" rel="noreferrer">flodesk.com/privacy</a>.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>YOUR RIGHTS</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Request access to the personal information we hold about you</li>
+        <li>Request correction of inaccurate information</li>
+        <li>Request deletion of your information</li>
+        <li>Opt out of future communications at any time</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at the address below.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>CHANGES TO THIS POLICY</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the site after changes constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>CONTACT US</h2>
+      <p>Questions or concerns about this Privacy Policy or your personal information? Reach out:</p>
+      <div class="contact-box">
+        <p style="color:#fff; font-weight:600; font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.1em;">THE PECULIAR COLLECTIVE</p>
+        <p>Email: <a href="mailto:info@peculiarcollective.us">info@peculiarcollective.us</a></p>
+        <p>Website: <a href="https://peculiarcollective.us" target="_blank" rel="noreferrer">peculiarcollective.us</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <!-- Logo + Socials -->
+        <div>
+          <div class="footer-logo"></div>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/groups/thepeculiarcollective" target="_blank" rel="noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="#fff"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64h-64z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/the_peculiarcollective" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="#fff">
+                <circle cx="255.25" cy="256.21" r="70.68"/>
+                <path d="M338,54.63H174c-62.72,0-114,51.31-114,114V343.33c0,62.73,51.32,114,114,114H338c62.72,0,114-51.31,114-114V168.67C452,105.94,400.68,54.63,338,54.63ZM255.77,364.07A107.95,107.95,0,1,1,363.71,256.13,107.95,107.95,0,0,1,255.77,364.07Zm109.67-192A25.56,25.56,0,1,1,391,146.5,25.56,25.56,0,0,1,365.44,172.06Z"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@thepeculiarcollective" target="_blank" rel="noreferrer" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="#fff"><path d="M508.6 148.8c0-45-33.1-81.2-74-81.2C379.2 65 322.7 64 265 64h-18c-57.6 0-114.2 1-169.6 3.6C36.6 67.6 3.5 104 3.5 149 1 184.6-.1 220.2 0 255.8c-.1 35.6 1 71.2 3.4 106.9 0 45 33.1 81.5 73.9 81.5 58.2 2.7 117.9 3.9 178.6 3.8 60.8.2 120.3-1 178.6-3.8 40.9 0 74-36.5 74-81.5 2.4-35.7 3.5-71.3 3.4-107 .2-35.6-.9-71.2-3.3-106.9zM199 336V175l133 80.5L199 336z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Community -->
+        <div>
+          <p class="footer-col-label">Community</p>
+          <div class="footer-links">
+            <a href="https://www.facebook.com/groups/thepeculiarcollective" target="_blank" rel="noreferrer" class="footer-link">Join Facebook Group</a>
+            <a href="https://peculiarcollective.us/who-we-are" target="_blank" rel="noreferrer" class="footer-link">Our Story</a>
+            <a href="https://www.skool.com/peculiar-collective-8528/about" target="_blank" rel="noreferrer" class="footer-link">Education +</a>
+            <a href="https://peculiarcollective.us" target="_blank" rel="noreferrer" class="footer-link">Main Site</a>
+          </div>
+        </div>
+
+        <!-- Conference -->
+        <div>
+          <p class="footer-col-label">Conference</p>
+          <div class="footer-links">
+            <a href="https://peculiarcollective.us/conference" target="_blank" rel="noreferrer" class="footer-link-lime">Register Now</a>
+            <a href="https://peculiarcollective.us/conference" target="_blank" rel="noreferrer" class="footer-link">Peculiar Conference '26</a>
+            <a href="https://peculiarcollective.us/sponsors" target="_blank" rel="noreferrer" class="footer-link">Sponsor</a>
+            <a href="https://peculiarcollective.us/main-speaker" target="_blank" rel="noreferrer" class="footer-link">Speakers</a>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div>
+          <p class="footer-col-label">Info</p>
+          <div class="footer-links">
+            <a href="https://peculiarcollective.us/faq" target="_blank" rel="noreferrer" class="footer-link">FAQ</a>
+            <a href="https://peculiarcollective.us/travel" target="_blank" rel="noreferrer" class="footer-link">Travel</a>
+            <a href="https://peculiarcollective.us/photowalks" target="_blank" rel="noreferrer" class="footer-link">Photowalks</a>
+            <a href="https://donate.stripe.com/4gwcPPavO1qWe6k9AB" target="_blank" rel="noreferrer" class="footer-link">Donate</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <p>© 2026 The Peculiar Collective. All rights reserved.</p>
+          <p>Fort Lauderdale, FL · June 15–18, 2026</p>
+          <p>info@peculiarcollective.us</p>
+        </div>
+        <div>
+          <a href="privacy.html" class="footer-link" style="color:rgba(255,255,255,0.45);">Privacy Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
